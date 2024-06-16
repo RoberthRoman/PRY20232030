@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-shadow {
+  box-shadow: 10px 8px 20px -3px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: 10px 8px 20px -3px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 10px 8px 20px -3px rgba(0, 0, 0, 0.29);
+}
+
+.shadow-div {
+  box-shadow: 10px 8px 20px -3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 10px 8px 20px -3px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 10px 8px 20px -3px rgba(0, 0, 0, 0.07);
+}
+
+.background-image-opacity {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image-opacity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("/bg-vegetable.png"); /* Ajusta la ruta si es necesario */
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7; /* Ajusta la opacidad según sea necesario */
+}
+
+.background-image-opacity-content {
+  position: relative; /* Para que el contenido se sitúe sobre el pseudo-elemento */
+}
+
+.b-shadow-table {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.b-shadow-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-container {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 960px) {
+  .img-container {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .img-container {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 400px) {
+  .img-container {
+    height: 20vh;
+  }
+}
+
+@media (max-width: 960px) {
+  .login-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-form {
+    width: 90%;
+  }
+}
+

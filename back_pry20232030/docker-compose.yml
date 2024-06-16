@@ -1,0 +1,32 @@
+services:
+  api:
+    container_name: greengrocer-api
+    image: deep-stocked-api
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    ports:
+      - '4000:4000'
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - database
+    command: yarn run start
+
+  database:
+    container_name: greengrocer-db
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=${DEV_DATABASE_NAME}
+      - POSTGRES_USER=${DEV_DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DEV_DATABASE_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: {}
